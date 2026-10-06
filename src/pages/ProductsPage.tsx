@@ -55,7 +55,7 @@ export const categories = [
 
 export default function ProductsPage() {
   return (
-    <div className="bg-[#0B0C0E] min-h-screen font-sans selection:bg-[#A28251] selection:text-[#F2EEE6]">
+    <div className="bg-[#0B0C0E] min-h-screen font-sans selection:bg-[#A28251] selection:text-[#F2EEE6] overflow-x-hidden w-full relative">
       <Header />
 
       {/* Hero Section */}

@@ -29,7 +29,7 @@ function App() {
   }
 
   return (
-    <div className="bg-neutral-900">
+    <div className="bg-neutral-900 overflow-x-hidden w-full relative">
       {/* Header Component */}
       <Header />
 
