@@ -3,6 +3,29 @@ import logoImage from '../assets/image/website logo.png';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeLang, setActiveLang] = useState(() => {
+    const match = document.cookie.match(/googtrans=\/en\/([a-z]{2})/);
+    return match ? match[1] : 'en';
+  });
+
+  const changeLanguage = (langCode: string) => {
+    if (activeLang === langCode) return;
+    setActiveLang(langCode);
+    
+    // Set the cookie directly for immediate persistence
+    document.cookie = `googtrans=/en/${langCode}; path=/`;
+    document.cookie = `googtrans=/en/${langCode}; path=/; domain=${window.location.hostname}`;
+    
+    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+    if (select) {
+      select.value = langCode;
+      // Google Translate requires bubbles: true to detect the change event properly
+      select.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
+    } else {
+      // Fallback if the Google widget hasn't loaded yet
+      window.location.reload();
+    }
+  };
 
   const navLinks = [
     { name: 'ABOUT', href: '/' },
@@ -56,10 +79,16 @@ const Header: React.FC = () => {
           <div className="hidden xl:flex items-center gap-6">
             {/* Language Switcher */}
             <div className="flex items-center border border-white/20">
-              <button className="bg-[#ce9e4b] text-black text-[13px] font-bold px-3 py-1.5 transition-colors">
+              <button 
+                onClick={() => changeLanguage('en')}
+                className={`${activeLang === 'en' ? 'bg-[#ce9e4b] text-black' : 'text-[#f3ecdb] hover:bg-white/10'} text-[13px] font-bold px-3 py-1.5 transition-colors`}
+              >
                 EN
               </button>
-              <button className="text-[#f3ecdb] hover:bg-white/10 text-[13px] font-bold px-3 py-1.5 transition-colors">
+              <button 
+                onClick={() => changeLanguage('pt')}
+                className={`${activeLang === 'pt' ? 'bg-[#ce9e4b] text-black' : 'text-[#f3ecdb] hover:bg-white/10'} text-[13px] font-bold px-3 py-1.5 transition-colors`}
+              >
                 PT
               </button>
             </div>
@@ -105,10 +134,16 @@ const Header: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row items-center gap-6 mt-6 pb-4">
             <div className="flex items-center border border-white/20 w-full sm:w-auto">
-              <button className="bg-[#ce9e4b] text-black text-sm font-bold px-6 py-3 w-1/2 sm:w-auto">
+              <button 
+                onClick={() => changeLanguage('en')}
+                className={`${activeLang === 'en' ? 'bg-[#ce9e4b] text-black' : 'text-[#f3ecdb] hover:bg-white/10'} text-sm font-bold px-6 py-3 w-1/2 sm:w-auto transition-colors`}
+              >
                 EN
               </button>
-              <button className="text-[#f3ecdb] hover:bg-white/10 text-sm font-bold px-6 py-3 w-1/2 sm:w-auto">
+              <button 
+                onClick={() => changeLanguage('pt')}
+                className={`${activeLang === 'pt' ? 'bg-[#ce9e4b] text-black' : 'text-[#f3ecdb] hover:bg-white/10'} text-sm font-bold px-6 py-3 w-1/2 sm:w-auto transition-colors`}
+              >
                 PT
               </button>
             </div>
