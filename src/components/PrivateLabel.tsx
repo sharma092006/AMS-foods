@@ -80,7 +80,7 @@ export default function PrivateLabel() {
                   
                   {/* Accordion Content */}
                   <div 
-                    className={`overflow-hidden transition-all duration-400 ease-in-out ${isOpen ? 'max-h-[300px] opacity-100 pb-6' : 'max-h-0 opacity-0 pb-0'}`}
+                    className={`overflow-hidden transition-all duration-400 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100 pb-6' : 'max-h-0 opacity-0 pb-0'}`}
                   >
                     <p className="text-[#A3B0A8] text-[14px] lg:text-[15px] font-light leading-relaxed pl-16 lg:pl-[72px] pr-4 lg:pr-10">
                       {step.desc}

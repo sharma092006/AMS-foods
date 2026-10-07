@@ -55,7 +55,7 @@ export default function Partnerships() {
           {cards.map((card, index) => (
             <div 
               key={index}
-              className={`relative flex flex-col h-[400px] lg:h-[480px] w-full overflow-hidden group cursor-pointer bg-[#1A1C1A] ${card.cardStyle}`}
+              className={`relative flex flex-col min-h-[400px] lg:min-h-[480px] w-full overflow-hidden group cursor-pointer bg-[#1A1C1A] ${card.cardStyle}`}
             >
               {/* Background Image with Hover Zoom */}
               <div className="absolute inset-0 w-full h-full overflow-hidden z-0">

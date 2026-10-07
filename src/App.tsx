@@ -10,7 +10,6 @@ import WaysToWork from './components/WaysToWork';
 import OurBrands from './components/OurBrands';
 import OurProducts from './components/OurProducts';
 import PrivateLabel from './components/PrivateLabel';
-import GlobalSourcing from './components/GlobalSourcing';
 import OurMarkets from './components/OurMarkets';
 import Partnerships from './components/Partnerships';
 import QualityStandards from './components/QualityStandards';
@@ -19,8 +18,20 @@ import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetailsPage from './pages/ProductDetailsPage';
+import AboutPage from './pages/AboutPage';
+import CapabilitiesPage from './pages/CapabilitiesPage';
+import BrandsPage from './pages/BrandsPage';
 
 function App() {
+  if (window.location.pathname === '/about') {
+    return <AboutPage />;
+  }
+  if (window.location.pathname === '/capabilities') {
+    return <CapabilitiesPage />;
+  }
+  if (window.location.pathname === '/brands') {
+    return <BrandsPage />;
+  }
   if (window.location.pathname === '/products') {
     return <ProductsPage />;
   }
@@ -90,9 +101,6 @@ function App() {
 
       {/* Private Label Section */}
       <PrivateLabel />
-
-      {/* Global Sourcing Section */}
-      <GlobalSourcing />
 
       {/* Our Markets Section */}
       <OurMarkets />

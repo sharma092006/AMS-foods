@@ -9,7 +9,7 @@ const WhoWeAre: React.FC = () => (
           02 <span className="mx-3 font-light">/</span> Who we are
         </span>
 
-        <h2 className="text-5xl md:text-6xl lg:text-[76px] font-serif leading-[1.05] mb-10 font-['Times_New_Roman',serif] whitespace-nowrap tracking-tight">
+        <h2 className="text-5xl md:text-6xl lg:text-[76px] font-serif leading-[1.05] mb-10 font-['Times_New_Roman',serif] tracking-tight break-words">
           <span className="block text-[#1C1B19] mb-1">Building brands.</span>
           <span className="block text-[#A28251] italic">Connecting markets.</span>
         </h2>

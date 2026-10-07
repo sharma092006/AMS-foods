@@ -28,9 +28,9 @@ const Header: React.FC = () => {
   };
 
   const navLinks = [
-    { name: 'ABOUT', href: '/' },
-    { name: 'CAPABILITIES', href: '#' },
-    { name: 'BRANDS', href: '#' },
+    { name: 'ABOUT', href: '/about' },
+    { name: 'CAPABILITIES', href: '/capabilities' },
+    { name: 'BRANDS', href: '/brands' },
     { name: 'PRODUCTS', href: '/products' },
     { name: 'PRIVATE LABEL', href: '#' },
     { name: 'GLOBAL REACH', href: '#' },
@@ -62,12 +62,12 @@ const Header: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-8">
+          <nav className="hidden xl:flex items-center gap-4 xl:gap-6 2xl:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="group relative text-[#f3ecdb] text-[13px] font-bold tracking-wider hover:text-[#ce9e4b] transition-colors duration-300 py-1"
+                className="group relative text-[#f3ecdb] text-[13px] font-bold tracking-wider hover:text-[#ce9e4b] transition-colors duration-300 py-1 whitespace-nowrap"
               >
                 {link.name}
                 <span className="absolute left-0 bottom-0 w-full h-[2px] bg-[#ce9e4b] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
             </div>
 
             {/* CTA Button */}
-            <button className="bg-[#ce9e4b] hover:bg-[#dcb05f] text-black text-[13px] font-bold tracking-wider px-6 py-3.5 transition-all duration-300 shadow-[0_0_15px_rgba(206,158,75,0.2)] hover:shadow-[0_0_20px_rgba(206,158,75,0.4)]">
+            <button className="bg-[#ce9e4b] hover:bg-[#dcb05f] text-black text-[13px] font-bold tracking-wider px-6 py-3.5 transition-all duration-300 shadow-[0_0_15px_rgba(206,158,75,0.2)] hover:shadow-[0_0_20px_rgba(206,158,75,0.4)] whitespace-nowrap">
               BUSINESS ENQUIRY
             </button>
           </div>
